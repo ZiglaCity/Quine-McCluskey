@@ -111,12 +111,6 @@ def sop_expression(prime_implicants):
     return ' + '.join(sorted(terms))
 
 
-def check_inputs(inputs):
-    for item in inputs:
-        if not item.isdigit():
-            raise ValueError(f"Invalid input: {item}. All inputs should be integers.")
-    return True
-
 print("############################################################################################")
 print("Welcome to Zigla's Quine McCluskey Solver!")
 print("############################################################################################")
@@ -156,7 +150,6 @@ else:
 # limiting the max minterm to just four variables
 if int(max(minterms)) > 15:
     print("Minterm greater than expected!")
-
 
 minterms.sort()
 print(f"Minterms: {minterms}")
