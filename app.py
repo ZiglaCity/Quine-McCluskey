@@ -6,7 +6,7 @@ class Quine_McCluskey:
     def __init__(self, root):
         self.root = root
         self.root.title("Zigla's Quine-McCluskey Minimizer")
-        self.root.geometry("600x400") 
+        self.root.geometry("600x500") 
         self.root.resizable(False, False)
         self.apply_global_style() 
         self.setup_ui()
@@ -42,7 +42,11 @@ class Quine_McCluskey:
         self.add_placeholder(self.variables_entry, "Enter variables if you want to change default (e.g., A, B, C, D)")
 
         solve_button = ttk.Button(form_frame, text="Solve", command=self.solve)
-        solve_button.pack(pady=20)
+        solve_button.pack(pady=30)
+
+        self.answer = tk.StringVar()
+        self.answer_label = ttk.Label(form_frame, textvariable=self.answer)
+        self.answer_label.pack(pady=20)
 
     def add_placeholder(self, entry, placeholder):
         entry.insert(0, placeholder)
@@ -211,6 +215,7 @@ class Quine_McCluskey:
         final_expression = sop_expression(final_prime_implicants)
 
         print("Minimized Boolean Function: F = ", final_expression)
+        self.answer.set(f"F = {final_expression}")
 
 if __name__ == "__main__":
     root = tk.Tk()
