@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 
 class Quine_McCluskey:
     
@@ -59,41 +59,43 @@ class Quine_McCluskey:
             entry.insert(0, placeholder)
             entry.config(fg="grey")
 
-    def check_inputs(self, inputs):
-        for item in inputs:
-            if not item.isdigit():
-                raise ValueError(f"Invalid input: {item}. All inputs should be integers.")
-        return True
-
     def solve(self):
+        if self.minterms_entry.get() == "Enter minterms (e.g., 0, 1, 2)":
+            return messagebox.showerror("Error!", "Please input minterms to solve!")
         minterms = self.minterms_entry.get().replace(" ", "").strip(',')
-        dont_cares = self.dont_cares_entry.get().replace(" ", "").strip(',')
-        variables = self.variables_entry.get().replace(" ", "").strip(',')
+        minterms = [int(x) for x in minterms.split(',') if x.isdigit()] #remove all characters which are not numbers
+        if not minterms:
+            return messagebox.showinfo("Wrong Input!", "Please input numbers for minterms!")
+        if int(max(minterms)) > 15:
+            return messagebox.showinfo("Exceeded Limit!", "Maximum minterm should be 15, since its 4 variables.")
 
-        minterms_list = minterms.split(',')
-        dont_cares_list = dont_cares.split(',')
-        variables_list = variables.split(',')
-
+    
         if self.dont_cares_entry.get() == "Enter don't cares (e.g., 3, 4)":
-            dont_cares_list = []
-        if self.variables_entry.get() == "Enter variables (e.g., A, B, C)":
-            variables_list = ['A', 'B', 'C', 'D']
+            dont_cares = []
+        else:
+            dont_cares = self.dont_cares_entry.get().replace(" ", "").strip(',')
+            dont_cares = [int(x) for x in dont_cares.split(',') if x.isdigit()]
+            if int(max(dont_cares)) > 15:
+                return messagebox.showinfo("Exceeded Limit!", "Maximum dont care should be 15, since its 4 variables.")
 
-        try:
-            self.check_inputs(minterms_list)
-            self.check_inputs(dont_cares_list)
-        except ValueError as e:
-            print(e)
-            return
 
-        if int(max(minterms_list)) > 15:
-            print("Minterm greater than expected!")
+        if self.variables_entry.get() == "Enter variables to change default (e.g., A, B, C, D)":
+            variables = ['A', 'B', 'C', 'D']
+        else:
+            variables = self.variables_entry.get().replace(" ", "").strip(',').split(',')
+            if len(variables) > 4:
+                return messagebox.showinfo("Exceeded Limit!", "Too many variables, input just 4 variables!")
 
-        print(f"Minterms: {minterms_list}")
-        print(f"Don't Cares: {dont_cares_list}")
-        print(f"Variables: {variables_list}")
+
+        print(f"Minterms: {minterms}")
+        print(f"Don't Cares: {dont_cares}")
+        print(f"Variables: {variables}")
 
         print("Solving...")
+        # final_prime_implicants = minimize_function(minterms, dont_cares, num_vars)
+        # final_expression = sop_expression(final_prime_implicants)
+
+        # print("Minimized Boolean Function: F = ", final_expression)
 
 if __name__ == "__main__":
     root = tk.Tk()
