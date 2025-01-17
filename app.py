@@ -84,7 +84,7 @@ class Quine_McCluskey:
         else:
             variables = self.variables_entry.get().replace(" ", "").strip(',').split(',')
             if len(variables) > 4:
-                return messagebox.showinfo("Exceeded Limit!", "Too many variables, input just 4 variables!")
+                return messagebox.showinfo("Exceeded Limit!", "Too many variables, input just 4!")
 
 
         print(f"Minterms: {minterms}")
