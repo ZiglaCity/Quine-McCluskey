@@ -116,9 +116,15 @@ def check_inputs(inputs):
         if not item.isdigit():
             raise ValueError(f"Invalid input: {item}. All inputs should be integers.")
     return True
-    
+
+print("############################################################################################")
+print("Welcome to Zigla's Quine McCluskey Solver!")
+print("############################################################################################")
+print("Press Enter if you don't want to change default variables or input don't cares.")
+print("############################################################################################")
+
 minterms = input("Enter minterms (e.g., 0, 1, 2): ")
-dont_cares = input("Enter don't cares (e.g., 3, 4): ")
+dont_cares = input("Enter optional don't cares (e.g., 3, 4): ")
 variables = input("Enter variables to change default (e.g., A, B, C, D): ")
 num_vars = 3
 
@@ -157,7 +163,6 @@ print(f"Minterms: {minterms}")
 print(f"Don't Cares: {dont_cares}")
 print(f"Variables: {variables}")
 print(f"Number of variables: {num_vars}")
-
 
 final_prime_implicants = minimize_function(minterms, dont_cares, num_vars)
 final_expression = sop_expression(final_prime_implicants)
