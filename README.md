@@ -36,6 +36,8 @@ git clone https://github.com/yourusername/quine-mccluskey.git
 cd quine-mccluskey
 Install the required packages:
 
+Ohh shit! there are no required packages- you only need python installed and for the app, you'll need tkinter to run it.
+
 pip install -r requirements.txt
 
 
