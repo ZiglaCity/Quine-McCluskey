@@ -30,15 +30,15 @@ python app.py
 This will launch the Tkinter-based desktop application.
 
 ## Installation
-Clone the repository:
+- Clone the repository:
+- git clone https://github.com/yourusername/quine-mccluskey.git
+- cd quine-mccluskey
 
-git clone https://github.com/yourusername/quine-mccluskey.git
-cd quine-mccluskey
-Install the required packages:
+- Install the required packages:
 
-Ohh shit! there are no required packages- you only need python installed and for the app, you'll need tkinter to run it.
+    Ohh shit! there are no required packages- you only need python installed and for the app, you'll need tkinter to run it.
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 
 ## Features
