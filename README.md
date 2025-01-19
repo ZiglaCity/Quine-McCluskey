@@ -64,6 +64,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgements
 Special thanks to all the contributors(Myself 😅) and users who helped improve this project!
-
-
-This `README.md` covers the introduction, file descriptions, usage instructions, installation, features, contributing guidelines, license information, and acknowledgements. You can customize it further based on your specific needs. 😊 
