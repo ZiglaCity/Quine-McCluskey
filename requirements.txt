@@ -1,0 +1,4 @@
+python==3.13.1 
+
+# Essential dependency for GUI
+tkinter  # Tkinter is included with Python, and generally does not require a separate installation
