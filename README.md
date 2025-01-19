@@ -22,46 +22,47 @@ python cli.py
 
 Follow the prompts to enter your minterms, don't-cares, and variables.
 
-app.py
+### app.py
 A graphical user interface (GUI) application built using Tkinter. This application provides an easy-to-use interface for users to input minterms, don't-cares, and variables, and view the minimized Boolean function.
 
-Usage:
+#### Usage:
 python app.py
 This will launch the Tkinter-based desktop application.
 
-Installation
+## Installation
 Clone the repository:
 
-bash
 git clone https://github.com/yourusername/quine-mccluskey.git
 cd quine-mccluskey
 Install the required packages:
 
 pip install -r requirements.txt
-Features
-Documentation: Detailed documentation of the Quine-McCluskey algorithm.
 
-CLI: Command Line Interface for users who prefer text-based interaction.
 
-GUI: Desktop application for users who prefer graphical interfaces.
+## Features
+- Documentation: Detailed documentation of the Quine-McCluskey algorithm.
 
-Contributing
+- CLI: Command Line Interface for users who prefer text-based interaction.
+
+- GUI: Desktop application for users who prefer graphical interfaces.
+
+## Contributing
 We welcome contributions! Please follow these steps:
 
-Fork the repository.
+- Fork the repository.
 
-Create a new branch (git checkout -b feature-branch).
+- Create a new branch (git checkout -b feature-branch).
 
-Commit your changes (git commit -m 'Add new feature').
+- Commit your changes (git commit -m 'Add new feature').
 
-Push to the branch (git push origin feature-branch).
+- Push to the branch (git push origin feature-branch).
 
-Create a new pull request.
+- Create a new pull request.
 
-License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Acknowledgements
+## Acknowledgements
 Special thanks to all the contributors(Myself 😅) and users who helped improve this project!
 
 
